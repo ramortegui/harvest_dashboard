@@ -29,4 +29,11 @@ class HarvestReportTest < ActiveSupport::TestCase
     assert_equal(71,structured_report.first[:entries].count,"Organization #{@organization1} has 72 entries")
   end
 
+  test 'get info about multiple organizations' do
+    organizations = [@organization1, @organization2]
+    report = Harvest::Report.new(organizations,'20160101','20170101')
+    structure_report = report.get_structured_report
+    assert_equal(2, structure_report.count, 'Exists two organizations info')
+  end
+
 end
