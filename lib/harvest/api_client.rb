@@ -27,8 +27,8 @@ module Harvest
     end
 
 
-    def get_clients
-      request = request('/clients', :get)
+    def get_resource(resource)
+      request = request("/#{resource}", :get)
       if request.body
         return JSON.parse(request.body)
       else
