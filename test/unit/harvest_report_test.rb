@@ -18,7 +18,7 @@ class HarvestReportTest < ActiveSupport::TestCase
     assert_equal(Harvest::Report, report.class, 'Report class instantiated successfully')
   end
 
-  test 'get clients of an organization' do
+  test 'get info about one organization' do
     organizations = [@organization1]
     report = Harvest::Report.new(organizations,'20160101','20170101')
     structured_report = report.get_structured_report
