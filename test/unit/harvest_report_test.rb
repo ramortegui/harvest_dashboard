@@ -14,19 +14,19 @@ class HarvestReportTest < ActiveSupport::TestCase
   end
 
   test 'Create a report based on organizations' do
-    report = Harvest::Report.new([])
+    report = Harvest::Report.new([],'','')
     assert_equal(Harvest::Report, report.class, 'Report class instantiated successfully')
   end
 
   test 'get clients of an organization' do
     organizations = [@organization1]
-    report = Harvest::Report.new(organizations)
+    report = Harvest::Report.new(organizations,'20160101','20170101')
     structured_report = report.get_structured_report
     assert_equal(1,structured_report.first[:clients].count,"Organization #{@organization1} has 1 client")
     assert_equal(4,structured_report.first[:people].count,"Organization #{@organization1} has 4 people")
     assert_equal(3,structured_report.first[:tasks].count,"Organization #{@organization1} has 3 tasks")
     assert_equal(1,structured_report.first[:projects].count,"Organization #{@organization1} has 1 project")
-    assert_equal(0,structured_report.first[:entries].count,"Organization #{@organization1} has 0 entries")
+    assert_equal(71,structured_report.first[:entries].count,"Organization #{@organization1} has 72 entries")
   end
 
 end

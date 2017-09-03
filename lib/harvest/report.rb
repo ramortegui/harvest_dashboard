@@ -1,8 +1,10 @@
 require 'harvest/api_client'
 module Harvest
   class Report
-    def initialize(organizations)
+    def initialize(organizations, from, to)
       @organizations = organizations
+      @from = from
+      @to = to
       @report = []
     end
     def get_structured_report
@@ -16,7 +18,7 @@ module Harvest
 
         entries = []
         projects.each { |proy| 
-          project_entries = api_client.get_resource("projects/#{proy["project"]["id"]}/entries?from=20170101&to=20170101")
+          project_entries = api_client.get_resource("projects/#{proy["project"]["id"]}/entries?from=#{@from}&to=#{@to}")
           entries += project_entries
         }
 
