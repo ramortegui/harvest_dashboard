@@ -1,14 +1,15 @@
 module Harvest
   class ApiClient
+    require 'json'
     #This class has been based on:
     # https://github.com/harvesthq/harvest_api_samples/blob/master/harvest_api_sample.rb
     HAS_SSL          = true
-    def initialize(organization)
+    def initialize(organization )
       @organization = organization
       @preferred_protocols = [HAS_SSL, ! HAS_SSL]
       connect!
     end 
-    def who_am_i(orzanization)
+    def who_am_i
       request('/account/who_am_i', :get)
     end   
 
@@ -25,21 +26,26 @@ module Harvest
       Base64.encode64("#{@organization.username}:#{@organization.password}").delete("\r\n")
     end
 
-    def send_request path, method = :get, body = ''
-      case method
-      when :get
-        @connection.get(path, headers)
+
+    def get_clients
+      request = request('/clients', :get)
+      if request.body
+        return JSON.parse(request.body)
+      else
+        @errors << "Error getting clients"
+        return nil
       end
     end
 
     private 
+
     def connect!
       port = has_ssl ? 443 : 80
       @connection = Net::HTTP.new("#{@organization.subdomain}.harvestapp.com", port)
       @connection.use_ssl     = has_ssl
       @connection.verify_mode = OpenSSL::SSL::VERIFY_PEER
     end
-   
+
     def has_ssl
       @preferred_protocols.first
     end 
@@ -61,6 +67,13 @@ module Harvest
       else
         dump_headers = response.to_hash.map { |h,v| [h.upcase,v].join(': ') }.join("\n")
         raise "#{response.message} (#{response.code})\n\n#{dump_headers}\n\n#{response.body}\n"
+      end
+    end
+
+    def send_request path, method = :get, body = ''
+      case method
+      when :get
+        @connection.get(path, headers)
       end
     end
 
