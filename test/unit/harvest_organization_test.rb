@@ -2,10 +2,10 @@ require 'test_helper'
 require 'harvest/organization'
 
 class HarvestOrganizationTest < ActiveSupport::TestCase
-  @username = 'username'
-  @password = 'password'
   setup do
-    @organization = Harvest::Organization.new(@username, @passsword)
+    @username = 'username'
+    @password = 'password'
+    @organization = Harvest::Organization.new(@username, @password)
   end
 
   test "Create a new Organization" do
@@ -15,6 +15,11 @@ class HarvestOrganizationTest < ActiveSupport::TestCase
   test "Organization needs to have a email and password" do
     assert(Harvest::Organization.new(@username, @password),
            "New organization with minimum params")
+  end
+
+  test "Organization attributes are accesible" do
+    assert_equal(@username, @organization.username, "Username is accesible.")
+    assert_equal(@password, @organization.password, "Password is accesible.")
   end
 
 end
