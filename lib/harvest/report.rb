@@ -13,11 +13,19 @@ module Harvest
         people = api_client.get_resource('people')
         tasks = api_client.get_resource('tasks')
         projects = api_client.get_resource('projects')
+
+        entries = []
+        projects.each { |proy| 
+          project_entries = api_client.get_resource("projects/#{proy["project"]["id"]}/entries?from=20170101&to=20170101")
+          entries += project_entries
+        }
+
         @report <<  {
                       clients: clients,
                       people: people,
                       tasks: tasks,
-                      projects: projects 
+                      projects: projects,
+                      entries: entries
                     }
       }
       @report

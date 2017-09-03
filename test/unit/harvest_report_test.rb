@@ -26,6 +26,7 @@ class HarvestReportTest < ActiveSupport::TestCase
     assert_equal(4,structured_report.first[:people].count,"Organization #{@organization1} has 4 people")
     assert_equal(3,structured_report.first[:tasks].count,"Organization #{@organization1} has 3 tasks")
     assert_equal(1,structured_report.first[:projects].count,"Organization #{@organization1} has 1 project")
+    assert_equal(0,structured_report.first[:entries].count,"Organization #{@organization1} has 0 entries")
   end
 
 end
