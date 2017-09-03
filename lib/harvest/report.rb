@@ -12,10 +12,12 @@ module Harvest
         clients = api_client.get_resource('clients')
         people = api_client.get_resource('people')
         tasks = api_client.get_resource('tasks')
+        projects = api_client.get_resource('projects')
         @report <<  {
                       clients: clients,
                       people: people,
-                      tasks: tasks
+                      tasks: tasks,
+                      projects: projects 
                     }
       }
       @report
