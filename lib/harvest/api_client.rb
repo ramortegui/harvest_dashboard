@@ -1,6 +1,11 @@
 module Harvest
   class ApiClient
     require 'json'
+    require 'base64'
+    require 'date'
+    require 'net/http'
+    require 'net/https'
+    require 'time'
     #This class has been based on:
     # https://github.com/harvesthq/harvest_api_samples/blob/master/harvest_api_sample.rb
     HAS_SSL          = true
