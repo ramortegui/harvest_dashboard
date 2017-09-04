@@ -14,7 +14,7 @@ class HarvestReportTest < ActiveSupport::TestCase
   end
 
   test 'Create a report based on organizations' do
-    report = Harvest::Report.new([],'','')
+    report = Harvest::Report.new([],'20160101','20160101')
     assert_equal(Harvest::Report, report.class, 'Report class instantiated successfully')
   end
 
@@ -36,4 +36,12 @@ class HarvestReportTest < ActiveSupport::TestCase
     assert_equal(2, structure_report.count, 'Exists two organizations info')
   end
 
+  test 'rails raises exception on report with invalid dates' do
+    organizations = [@organization1]
+    err = assert_raises RuntimeError do
+      report = Harvest::Report.new(organizations,'','')
+      report.get_structured_report
+    end
+    assert_match /invalid date/, err.message
+  end
 end

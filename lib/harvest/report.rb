@@ -1,11 +1,16 @@
 require 'harvest/api_client'
+require 'date'
 module Harvest
   class Report
+    attr_reader :error
     def initialize(organizations, from, to)
       @organizations = organizations
+      check_date_format(from)
+      check_date_format(to)
       @from = from
       @to = to
       @report = []
+      @error = nil
     end
     def get_structured_report
       @organizations.each { |org|
@@ -32,5 +37,16 @@ module Harvest
       }
       @report
     end
+
+private
+    def check_date_format(date)
+      begin
+        Date.strptime(date,'%Y%m%d')
+      rescue
+        @error = "invalid date"
+        raise @error
+      end
+    end
+
   end
 end
