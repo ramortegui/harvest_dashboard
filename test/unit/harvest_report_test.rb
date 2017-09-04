@@ -44,4 +44,11 @@ class HarvestReportTest < ActiveSupport::TestCase
     end
     assert_match /invalid date/, err.message
   end
+
+  test 'get detailed report ' do
+    organizations = [@organization1]
+    report = Harvest::Report.new(organizations,'20160101','20170101')
+    detailed_report = report.get_detailed_report
+    assert_equal(71,detailed_report.count,"Organization #{@organization1} has 71 entries")
+  end
 end

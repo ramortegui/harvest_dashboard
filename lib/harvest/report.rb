@@ -38,6 +38,21 @@ module Harvest
       @report
     end
 
+    def get_detailed_report( report = nil )
+      report = report || get_structured_report
+      detailed_report = []
+      @report.each{ |company_report|
+        clients = convert_to_hash(:clients, company_report)
+        people = convert_to_hash(:people, company_report)
+        tasks = convert_to_hash(:tasks, company_report)
+        projects = convert_to_hash(:projects, company_report)
+        company_report[:entries].each { |entry|
+          hash_entry = entry["day_entry"]
+          detailed_report << hash_entry
+        }
+      }
+      detailed_report
+    end
 private
     def check_date_format(date)
       begin
@@ -48,5 +63,27 @@ private
       end
     end
 
+    def convert_to_hash(structure, data)
+      new_structure = {}
+      case structure
+      when :clients
+        data[:clients].each { |client|
+          new_structure[client["client"]["id"]] = client["client"]
+        }
+      when :people
+        data[:people].each { |person|
+          new_structure[person["user"]["id"]] = person["user"]
+        }
+      when :tasks
+        data[:tasks].each { |task|
+          new_structure[task["task"]["id"]] = task["task"]
+        }
+      when :projects
+        data[:projects].each { |project|
+          new_structure[project["project"]["id"]] = project["project"]
+        }
+      end
+      new_structure
+    end
   end
 end
