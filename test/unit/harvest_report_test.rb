@@ -26,7 +26,7 @@ class HarvestReportTest < ActiveSupport::TestCase
     assert_equal(4,structured_report.first[:people].count,"Organization #{@organization1} has 4 people")
     assert_equal(3,structured_report.first[:tasks].count,"Organization #{@organization1} has 3 tasks")
     assert_equal(1,structured_report.first[:projects].count,"Organization #{@organization1} has 1 project")
-    assert_equal(71,structured_report.first[:entries].count,"Organization #{@organization1} has 72 entries")
+    assert_equal(137,structured_report.first[:entries].count,"Organization #{@organization1} has 72 entries")
   end
 
   test 'get info about multiple organizations' do
@@ -49,7 +49,7 @@ class HarvestReportTest < ActiveSupport::TestCase
     organizations = [@organization1]
     report = Harvest::Report.new(organizations,'20160101','20170101')
     detailed_report = report.get_detailed_report
-    assert_equal(71,detailed_report.count,"Organization #{@organization1} has 71 entries")
+    assert_equal(137,detailed_report.count,"Organization #{@organization1} has 71 entries")
   end
 
   test 'detailed report has all the fields' do
