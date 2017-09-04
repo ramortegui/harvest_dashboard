@@ -51,4 +51,18 @@ class HarvestReportTest < ActiveSupport::TestCase
     detailed_report = report.get_detailed_report
     assert_equal(71,detailed_report.count,"Organization #{@organization1} has 71 entries")
   end
+
+  test 'detailed report has all the fields' do
+    organizations = [@organization1]
+    report = Harvest::Report.new(organizations,'20160101','20170101')
+    detailed_report = report.get_detailed_report
+    assert(detailed_report.first["date"],"Detailed report has date.")
+    assert(detailed_report.first["client"],"Detailed report has client.")
+    assert(detailed_report.first["project"],"Detailed report has project.")
+    assert(detailed_report.first["project_active"],"Detailed report has project_active.")
+    assert(detailed_report.first["task"],"Detailed report has task.")
+    assert(detailed_report.first["person"],"Detailed report has person.")
+    assert(detailed_report.first["hours"],"Detailed report has hours.")
+    assert(detailed_report.first["organization"],"Detailed report has organization.")
+  end
 end

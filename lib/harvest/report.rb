@@ -32,7 +32,8 @@ module Harvest
                       people: people,
                       tasks: tasks,
                       projects: projects,
-                      entries: entries
+                      entries: entries,
+                      organization: org.subdomain
                     }
       }
       @report
@@ -47,7 +48,20 @@ module Harvest
         tasks = convert_to_hash(:tasks, company_report)
         projects = convert_to_hash(:projects, company_report)
         company_report[:entries].each { |entry|
-          hash_entry = entry["day_entry"]
+          day_entry = entry["day_entry"]
+          project_id = projects[day_entry["project_id"]]["id"]
+          client_id = projects[day_entry["project_id"]]["client_id"]
+          hash_entry = {
+            "date" => day_entry["spent_at"],
+            "project" => projects[project_id]["name"],
+            "client" => clients[client_id]["name"],
+            "project_active" => projects[day_entry["project_id"]]["active"],
+            "task" => tasks[day_entry["task_id"]]["name"],
+            "person" => people[day_entry["user_id"]]["first_name"]+" "+
+                        people[day_entry["user_id"]]["last_name"],
+            "hours" => day_entry["hours"],
+            "organization" => company_report[:organization]
+          }
           detailed_report << hash_entry
         }
       }
