@@ -1,25 +1,142 @@
-<h1>Dashboard#index</h1>
-<table>
+<h2>Dashboard#index</h2>
+<a class="group-by" data-column=6>User</a>
+<div>
+<table id="dashboard">
   <thead>
-  </thead>
-  <tbody>
-    <% sum = 0 %>
-    <% count = 0 %>
-    <% @detailed_report.each do |entry| %>
     <tr>
-      <td><%= entry["date"] %></td>
-      <td><%= entry["organization"] %></td>
-      <td><%= entry["client"] %></td>
-      <td><%= entry["project"] %></td>
-      <td><%= entry["project_active"] %></td>
-      <td><%= entry["task"] %></td>
-      <td><%= entry["person"] %></td>
-      <td><%= entry["hours"] %></td>
-      <% sum += entry["hours"] %>
-      <% count+=1 %>
-    <% end %>
+      <th>Date</th>
+      <th>Organization</th>
+      <th>Client</th>
+      <th>Project</th>
+      <th>Active</th>
+      <th>Task</th>
+      <th>User</th>
+      <th>Hours</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th>Organization</th>
+      <th>Client</th>
+      <th>Project</th>
+      <th>Active</th>
+      <th>Task</th>
+      <th>User</th>
+      <th>Hours</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th colspan="7" style="text-align:right">Total:</th>
+      <th></th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <% @detailed_report.each do |entry| %>
+      <tr>
+        <td><%= entry["date"] %></td>
+        <td><%= entry["organization"] %></td>
+        <td><%= entry["client"] %></td>
+        <td><%= entry["project"] %></td>
+        <td><%= entry["project_active"] %></td>
+        <td><%= entry["task"] %></td>
+        <td><%= entry["person"] %></td>
+        <td><%= entry["hours"] %></td>
+      <% end %>
   </tbody>
 </table>
-<%= sum %>
-<br/>
-    <%= count %>
+</div>
+<script>
+var tables;
+$(document).ready(function() {
+  var buttonCommon = {
+    exportOptions: {
+      format: {
+        body: function ( data, row, column, node ) {
+          return row === 0 ? "" : data;
+        }
+      }
+    },
+    header: false
+  };
+
+
+  tables = $('#dashboard').DataTable( {
+    orderFixed: [0,'asc'],
+    order: [[ 0, 'asc' ]],
+    paginate: false,
+    ordering: true,
+    rowGroup: {
+      dataSrc: 0,
+      startRender: function( rows, group){
+        var sum = rows
+          .data()
+          .pluck(7)
+          .reduce( function (a, b) {
+            return parseFloat(a) + parseFloat(b);
+          }, 0).toFixed(2) ;
+
+        return $('<tr/>')
+          .append( '<td colspan="7">'+group+'</td>' )
+          .append( '<td>'+sum+'</td>' )
+      }
+    },
+    dom: 'Bfrtip',
+    buttons: [
+      $.extend( true, {}, buttonCommon, {
+         extend: 'copy',
+      } ),
+      $.extend( true, {}, buttonCommon, {
+        extend: 'excel'
+      } ),
+      $.extend( true, {}, buttonCommon, {
+        extend: 'pdf'
+      } )
+    ],
+    initComplete: function () {
+      this.api().columns().every( function () {
+        var column = this;
+        var select = $('<select><option value=""></option></select>')
+          .appendTo( $(column.header()).empty() )
+          .on( 'change', function () {
+            var val = $.fn.dataTable.util.escapeRegex(
+                $(this).val()
+                );
+
+            column
+              .search( val ? '^'+val+'$' : '', true, false )
+              .draw();
+          } );
+
+        column.data().unique().sort().each( function ( d, j ) {
+          select.append( '<option value="'+d+'">'+d+'</option>' )
+        } );
+      } );
+    },
+    "footerCallback": function (row, data, start, end, display) {
+      var api = this.api(), data;
+      page_total =  api.column( 7, { search: "applied"} )
+        .data()
+        .reduce( function ( a, b ) {
+          return parseFloat(a) + parseFloat(b);
+        }, 0 );
+
+
+      $( api.column( 7 ).footer() ).html(page_total.toFixed(2));
+    },
+
+  } );
+
+
+  // Change the fixed ordering when the data source is updated
+  tables.on( 'rowgroup-datasrc', function ( e, dt, val ) {
+    tables.order.fixed( {pre: [[ val, 'asc' ]]} ).draw();
+  } );
+
+  $('a.group-by').on( 'click', function (e) {
+    e.preventDefault()
+      var column = $(this).data('column');
+    tables.order( [[column,'asc' ], [ 0 ,'asc'] ]);
+    tables.rowGroup().dataSrc( column );
+  } );
+});
+</script>
