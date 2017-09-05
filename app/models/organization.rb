@@ -1,5 +1,6 @@
 class Organization < ApplicationRecord
   validates :username, :password, :subdomain, presence: true 
+  validates_with OrganizationValidator
 
   def self.detailed_report
     require 'harvest'
