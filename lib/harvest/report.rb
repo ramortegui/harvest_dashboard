@@ -14,24 +14,24 @@ module Harvest
     end
     def get_structured_report
       @organizations.each { |org|
-        api_client = Harvest::ApiClient.new(org)
+        report_hash = {}
 
-        clients = api_client.get_resource('clients')
-        people = api_client.get_resource('people')
-        tasks = api_client.get_resource('tasks')
-        projects = api_client.get_resource('projects')
+        ['clients','people','tasks','projects'].pmap{ |resource|
+          local_api_client = Harvest::ApiClient.new(org)
+          report_hash[resource] = local_api_client.get_resource(resource)
+        }
 
         entries = []
-        projects.each { |proy| 
-          project_entries = api_client.get_resource("projects/#{proy["project"]["id"]}/entries?from=#{@from}&to=#{@to}")
-          entries += project_entries
+        report_hash['projects'].pmap{ |proy| 
+          local_api_client = Harvest::ApiClient.new(org)
+          entries += local_api_client.get_resource("projects/#{proy["project"]["id"]}/entries?from=#{@from}&to=#{@to}")
         }
 
         @report <<  {
-                      clients: clients,
-                      people: people,
-                      tasks: tasks,
-                      projects: projects,
+                      clients: report_hash['clients'],
+                      people: report_hash['people'],
+                      tasks: report_hash['tasks'],
+                      projects: report_hash['projects'],
                       entries: entries,
                       organization: org.subdomain
                     }
