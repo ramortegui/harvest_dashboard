@@ -1,6 +1,6 @@
 <select class="group_by">
   <option value=1>Organization</option>
-  <option value=0>Date</option>
+  <option value=0 selected>Date</option>
   <option value=5>Task</option>
   <option value=6>Staff</option>
 </select>
@@ -91,11 +91,8 @@ $(document).ready(function() {
          extend: 'copy',
       } ),
       $.extend( true, {}, buttonCommon, {
-        extend: 'excel'
+        extend: 'csv'
       } ),
-      $.extend( true, {}, buttonCommon, {
-        extend: 'pdf'
-      } )
     ],
     initComplete: function () {
       this.api().columns().every( function () {
