@@ -18,6 +18,11 @@ Features:
     * bundle install
     * rails db:setup (update credentials as needed)
     * rails server
+    * access on your browser: localhost:3000
+
+## Use
+
+In order to get reports, you will need to add organizations on the app.(link at the top)
 
 ## Assets
 
