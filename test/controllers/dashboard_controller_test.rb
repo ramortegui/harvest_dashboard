@@ -14,4 +14,11 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'shold get index' do
+    post dashboard_index_url, params: { from: '20160101', to: '20161231' }
+    assert_response :success
+  end
+
+
+
 end
