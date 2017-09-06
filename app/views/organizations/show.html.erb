@@ -6,13 +6,13 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @organization.password %>
+  <strong>Subdomain:</strong>
+  <%= @organization.subdomain %>
 </p>
 
 <p>
-  <strong>Subdomain:</strong>
-  <%= @organization.subdomain %>
+  <strong>Valid:</strong>
+  <%= @organization.valid? %>
 </p>
 
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
