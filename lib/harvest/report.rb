@@ -26,16 +26,13 @@ module Harvest
       # Loop organization
       @organizations.each { |org|
         report_hash = {}
-        # check the connections
-        api_client = Harvest::ApiClient.new(org)
-
-        # Get company info
 
         # Add to the report_hash information about each resource 
         # Celluloid pmap will help us sending requests in parallel
+
         [:"account/who_am_i", :clients, :people, :tasks , :projects].pmap{ |resource|
-          local_api_client = Harvest::ApiClient.new(org)
-          report_hash[resource] = local_api_client.get_resource(resource.to_s)
+          api_client = Harvest::ApiClient.new(org)
+          report_hash[resource] = api_client.get_resource(resource.to_s)
         }
 
         # Initialize an array of entries
@@ -44,8 +41,8 @@ module Harvest
         # Load entries for each project
         # Celluloid pmap will help us sending requests in parallel
         report_hash[:projects].pmap{ |proy|
-          local_api_client = Harvest::ApiClient.new(org)
-          entries += local_api_client.get_resource("projects/#{proy["project"]["id"]}/entries?from=#{@from}&to=#{@to}")
+          api_client = Harvest::ApiClient.new(org)
+          entries += api_client.get_resource("projects/#{proy["project"]["id"]}/entries?from=#{@from}&to=#{@to}")
         }
       
         # Add entries
