@@ -77,7 +77,8 @@ module Harvest
     end 
 
     #Receive a path, method and body and makes ask send_request to make the 
-    #call, after that checks the response
+    #call, when response is received, is checking the class of the response,
+    #and raise and error in case of needed.
     def request path, method = :get, body = ""
       response = send_request( path, method, body)
       if response.class < Net::HTTPSuccess
@@ -93,7 +94,6 @@ module Harvest
         connect!
         request(path, method, body)
       else
-        dump_headers = response.to_hash.map { |h,v| [h.upcase,v].join(': ') }.join("\n")
         raise "#{path}: #{response.message} (#{response.code})\n\n#{dump_headers}\n\n#{response.body}\n"
       end
     end

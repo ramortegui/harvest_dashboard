@@ -11,6 +11,7 @@ module Harvest
       @organizations = organizations
       check_date_format(from)
       check_date_format(to)
+      check_date_range(from,to)
       @from = from
       @to = to
       @report = []
@@ -97,11 +98,18 @@ private
     # Check valid date formats, in case of erro is going to raise and error 
     def check_date_format(date)
       begin
-        Date.strptime(date,'%Y%m%d')
+        Date.strptime(date, '%Y%m%d')
       rescue
-        @error = "invalid date"
+        @error = "Invalid date."
         raise @error
       end
+    end
+
+    def check_date_range(from,to)
+       if ( Date.strptime(to, '%Y%m%d') < Date.strptime(from, '%Y%m%d') )
+         @error = "Invalid date range."
+         raise @error
+       end
     end
 
     #Get a structure, and return a hash based on their id.
