@@ -1,8 +1,12 @@
-require 'harvest/api_client'
+require 'harvest'
 require 'date'
 module Harvest
+  # This class is used to create the reports based on an array of
+  # Harvest::Organization and two dates (from, to)
   class Report
     attr_reader :error
+    # Initialize the report, and update the forma of dates in case of erros
+    # As default: no report records, and no errors
     def initialize(organizations, from, to)
       @organizations = organizations
       check_date_format(from)
@@ -12,33 +16,53 @@ module Harvest
       @report = []
       @error = nil
     end
+
+    # For each organization we need to call the information of the account,
+    # clients, people, tasks, and projects, then we get the detailed entries
+    # and complete each record with the corresponding information.
     def get_structured_report
+
+      # Loop organization
       @organizations.each { |org|
         report_hash = {}
-        #check the connections
+        # check the connections
         api_client = Harvest::ApiClient.new(org)
+
+        # Get company info
         company_info = api_client.who_am_i
 
+        # Add to the report_hash information about each resource 
+        # Celluloid pmap will help us sending requests in parallel
         [:clients, :people, :tasks , :projects].pmap{ |resource|
           local_api_client = Harvest::ApiClient.new(org)
           report_hash[resource] = local_api_client.get_resource(resource.to_s)
         }
 
+        # Initialize an array of entries
         entries = []
 
+        # Load entries for each project
+        # Celluloid pmap will help us sending requests in parallel
         report_hash[:projects].pmap{ |proy|
           local_api_client = Harvest::ApiClient.new(org)
           entries += local_api_client.get_resource("projects/#{proy["project"]["id"]}/entries?from=#{@from}&to=#{@to}")
         }
-
+      
+        # Add entries
         report_hash[:entries] = entries
+
+        # Add name of the organization
         report_hash[:organization] =  company_info["company"]["name"]
 
+        # Add to the report array information about each organization
         @report << report_hash
       }
       @report
     end
 
+    # The detailed report is going to take the information of get_structured_report
+    # and will create the associations and the final array with information complete
+    # of each time record 
     def get_detailed_report(  )
       report = get_structured_report
       detailed_report = []
@@ -69,6 +93,8 @@ module Harvest
       detailed_report
     end
 private
+    
+    # Check valid date formats, in case of erro is going to raise and error 
     def check_date_format(date)
       begin
         Date.strptime(date,'%Y%m%d')
@@ -78,6 +104,7 @@ private
       end
     end
 
+    #Get a structure, and return a hash based on their id.
     def convert_to_hash(structure, data)
       new_structure = {}
       case structure
