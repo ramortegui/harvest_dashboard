@@ -1,9 +1,21 @@
+
+<%= form_tag('/dashboard/index') do -%>
+    <div>From: <%= date_field_tag 'from' %> To: <%= date_field_tag 'to' %></div>
+    <div><%= submit_tag 'Search' %></div>
+  <% end -%>
+<br/>
+<br/>
+<br/>
+
 <select class="group_by">
   <option value=1>Organization</option>
   <option value=0 selected>Date</option>
   <option value=5>Task</option>
   <option value=6>Staff</option>
 </select>
+<br />
+<br />
+<br />
 <table id="dashboard">
   <thead>
     <tr>
