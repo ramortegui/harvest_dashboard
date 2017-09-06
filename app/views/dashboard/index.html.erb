@@ -2,7 +2,7 @@
 <%= form_tag('/dashboard/index') do -%>
   <h1>Harvest Report</h1>
   <h2>From <%= @from_show %> to <%= @to_show %></h2>
-  <div>From:<%= date_field_tag 'from', @from_show %> To: <%= date_field_tag 'to', @to_show  %><%= submit_tag 'Search' %></div>
+  <div>From:<%= date_field_tag 'from', @from_show, { :required => true } %> To: <%= date_field_tag 'to', @to_show , { :required => true } %><%= submit_tag 'Search' %></div>
   <% end -%>
 <br/>
 <br/>
