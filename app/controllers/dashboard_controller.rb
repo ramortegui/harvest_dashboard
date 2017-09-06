@@ -6,7 +6,7 @@ class DashboardController < ApplicationController
       @from_show = params[:from]
     else
       @from = DateTime.now.to_date.beginning_of_month.strftime('%Y%m%d')
-      @from_show = DateTime.now.to_date.beginning_of_month.strftime('%d-%m-%Y')
+      @from_show = DateTime.now.to_date.beginning_of_month.strftime('%Y-%m-%d')
     end
 
     if( params[:to] ) 
@@ -14,7 +14,7 @@ class DashboardController < ApplicationController
       @to_show = params[:to]
     else
       @to = DateTime.now.to_date.end_of_month.strftime('%Y%m%d')
-      @to_show = DateTime.now.to_date.end_of_month.strftime('%d-%m-%Y')
+      @to_show = DateTime.now.to_date.end_of_month.strftime('%Y-%m-%d')
     end
 
     #Check exceptions running detailed report

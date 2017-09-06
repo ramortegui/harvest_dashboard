@@ -5,14 +5,14 @@
 
 
 <%= form_tag('/dashboard/index') do -%>
-  <h1>Harvest Report</h1>
+  <h1>Harvest Report</h1> 
   <h2>From <%= @from_show %> to <%= @to_show %></h2>
+<br/>
+<hr />
   <div>From:<%= date_field_tag 'from', @from_show, { :required => true } %> To: <%= date_field_tag 'to', @to_show , { :required => true } %><%= submit_tag 'Search' %></div>
   <% end -%>
 <br/>
 <br/>
-<br/>
-<hr />
 Group by: <select class="group_by">
   <option value=1>Organization</option>
   <option value=0 selected>Date</option>
