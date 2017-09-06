@@ -1,19 +1,29 @@
+# Module to communicate with Harvest accounts via API
 module Harvest
   class ApiClient
+
     require 'json'
     require 'base64'
     require 'date'
     require 'net/http'
     require 'net/https'
     require 'time'
-    #This class has been based on:
+    # his class has been based on:
     # https://github.com/harvesthq/harvest_api_samples/blob/master/harvest_api_sample.rb
-    HAS_SSL          = true
+
+    #Preferred method of connection
+    HAS_SSL = true
+    
+    # The Harvest::ApiClient receive as paramente a Harvest::Organization object, and 
+    # try to stablish a connection
     def initialize(organization )
       @organization = organization
       @preferred_protocols = [HAS_SSL, ! HAS_SSL]
       connect!
-    end 
+    end
+
+    # Basic method to verify communications, retrieving account info.
+    # When success, it returns a hash structure with the response
     def who_am_i
       request = request('/account/who_am_i', :get)
       if request.body
@@ -24,6 +34,7 @@ module Harvest
       end
     end   
 
+    # Add headers to the request (Json by default)
     def headers
       {
         "Accept"        => "application/json",
@@ -33,11 +44,13 @@ module Harvest
       }
     end
 
+    # Create the encoded string to send basic authentication to the api
     def auth_string
       Base64.encode64("#{@organization.username}:#{@organization.password}").delete("\r\n")
     end
 
 
+    #Receive a path to be called.  In case of success returns the hash representation
     def get_resource(resource)
       request = request("/#{resource}", :get)
       if request.body
@@ -50,6 +63,7 @@ module Harvest
 
     private 
 
+    #Method to stablish communicaton with havestpp server
     def connect!
       port = has_ssl ? 443 : 80
       @connection = Net::HTTP.new("#{@organization.subdomain}.harvestapp.com", port)
@@ -57,10 +71,13 @@ module Harvest
       @connection.verify_mode = OpenSSL::SSL::VERIFY_PEER
     end
 
+    #By default is going to try ssl, (as per sample code)
     def has_ssl
       @preferred_protocols.first
     end 
 
+    #Receive a path, method and body and makes ask send_request to make the 
+    #call, after that checks the response
     def request path, method = :get, body = ""
       response = send_request( path, method, body)
       if response.class < Net::HTTPSuccess
@@ -81,6 +98,8 @@ module Harvest
       end
     end
 
+    #Method that sends the request using the connection used when the
+    #object was initialized 
     def send_request path, method = :get, body = ''
       case method
       when :get
@@ -88,10 +107,12 @@ module Harvest
       end
     end
 
+    #If the request was good, doens't need to try again
     def on_completed_request
       @retry_counter = 0
     end
 
+    #Add tries in case of conection failure
     def retry_counter
       @retry_counter ||= 0
       @retry_counter += 1
