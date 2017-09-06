@@ -1,24 +1,37 @@
-# README
+# Harvest Dashboard 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails app able to integrate information between harvestapp accounts.
 
-Things you may want to cover:
+Sample app https://guarded-mountain-49893.herokuapp.com/
 
-* Ruby version
+Features:
 
-* System dependencies
+    * Manage multiple accounts
+    * Validates Organization credentials
+    * Merge accounts and present a report
+    * Report could be grouped and filtered by Date, Staff, Task, and Organization.
 
-* Configuration
+## Instalation
 
-* Database creation
+    * Clone the repo
+    * cd harvest_dashboard
+    * bundle install
+    * rails db:setup (update credentials as needed)
+    * rails server
 
-* Database initialization
+## Assets
 
-* How to run the test suite
+    * Javascript libraries loaded by CDN:
 
-* Services (job queues, cache servers, search engines, etc.)
+        * JQuery
+        * DataTables
+        * Bootstrap
 
-* Deployment instructions
+## Recommendations
 
-* ...
+    * Hide account password
+    * Add authentication system
+    * Add local assets
+    * Add turbolinks, and load datatables src by ajax calls.
+
+Developed by Ruben Amortegui - 2017
