@@ -1,13 +1,14 @@
 
 <%= form_tag('/dashboard/index') do -%>
-    <div>From: <%= date_field_tag 'from' %> To: <%= date_field_tag 'to' %></div>
-    <div><%= submit_tag 'Search' %></div>
+  <h1>Harvest Report</h1>
+  <h2>From <%= @from_show %> to <%= @to_show %></h2>
+  <div>From:<%= date_field_tag 'from', @from_show %> To: <%= date_field_tag 'to', @to_show  %><%= submit_tag 'Search' %></div>
   <% end -%>
 <br/>
 <br/>
 <br/>
-
-<select class="group_by">
+<hr />
+Group by: <select class="group_by">
   <option value=1>Organization</option>
   <option value=0 selected>Date</option>
   <option value=5>Task</option>
