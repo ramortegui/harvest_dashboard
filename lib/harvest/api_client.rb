@@ -15,7 +15,13 @@ module Harvest
       connect!
     end 
     def who_am_i
-      request('/account/who_am_i', :get)
+      request = request('/account/who_am_i', :get)
+      if request.body
+        return JSON.parse(request.body)
+      else
+        @errors << "Error getting account info"
+        return nil
+      end
     end   
 
     def headers
@@ -71,7 +77,7 @@ module Harvest
         request(path, method, body)
       else
         dump_headers = response.to_hash.map { |h,v| [h.upcase,v].join(': ') }.join("\n")
-        raise "#{response.message} (#{response.code})\n\n#{dump_headers}\n\n#{response.body}\n"
+        raise "#{path}: #{response.message} (#{response.code})\n\n#{dump_headers}\n\n#{response.body}\n"
       end
     end
 

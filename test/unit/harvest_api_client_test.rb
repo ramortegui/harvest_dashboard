@@ -8,13 +8,13 @@ class HarvestApiClientTest < ActiveSupport::TestCase
     @username = 'ruben.amortegui@gmail.com'
     @password = 'publico01'
     @subdomain = 'ramortegui'
-    @organization = Harvest::Organization.new(@username, @password, @subdomain) 
+    @organization = Harvest::Organization.new(@username, @password, @subdomain)
   end
 
   test 'Get connection to the harvestapp' do
     api_client = Harvest::ApiClient.new(@organization)
     who_am_i = api_client.who_am_i
-    assert_equal(@username, JSON.parse(who_am_i.body)["user"]["email"] , "Check success who am I.") 
+    assert_equal(@username, who_am_i["user"]["email"] , "Check success who am I.")
   end
 
 end

@@ -15,38 +15,39 @@ module Harvest
     def get_structured_report
       @organizations.each { |org|
         report_hash = {}
+        #check the connections
+        api_client = Harvest::ApiClient.new(org)
+        company_info = api_client.who_am_i
 
-        ['clients','people','tasks','projects'].pmap{ |resource|
+        [:clients, :people, :tasks , :projects].pmap{ |resource|
           local_api_client = Harvest::ApiClient.new(org)
-          report_hash[resource] = local_api_client.get_resource(resource)
+          report_hash[resource] = local_api_client.get_resource(resource.to_s)
         }
 
         entries = []
-        report_hash['projects'].pmap{ |proy| 
+
+        report_hash[:projects].pmap{ |proy|
           local_api_client = Harvest::ApiClient.new(org)
           entries += local_api_client.get_resource("projects/#{proy["project"]["id"]}/entries?from=#{@from}&to=#{@to}")
         }
 
-        @report <<  {
-                      clients: report_hash['clients'],
-                      people: report_hash['people'],
-                      tasks: report_hash['tasks'],
-                      projects: report_hash['projects'],
-                      entries: entries,
-                      organization: org.subdomain
-                    }
+        report_hash[:entries] = entries
+        report_hash[:organization] =  company_info["company"]["name"]
+
+        @report << report_hash
       }
       @report
     end
 
-    def get_detailed_report( report = nil )
-      report = report || get_structured_report
+    def get_detailed_report(  )
+      report = get_structured_report
       detailed_report = []
       @report.each{ |company_report|
         clients = convert_to_hash(:clients, company_report)
         people = convert_to_hash(:people, company_report)
         tasks = convert_to_hash(:tasks, company_report)
         projects = convert_to_hash(:projects, company_report)
+
         company_report[:entries].each { |entry|
           day_entry = entry["day_entry"]
           project_id = projects[day_entry["project_id"]]["id"]
