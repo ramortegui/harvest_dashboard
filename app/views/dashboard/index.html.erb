@@ -1,4 +1,9 @@
 
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+
+
 <%= form_tag('/dashboard/index') do -%>
   <h1>Harvest Report</h1>
   <h2>From <%= @from_show %> to <%= @to_show %></h2>
