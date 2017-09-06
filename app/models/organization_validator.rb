@@ -4,7 +4,7 @@ class OrganizationValidator < ActiveModel::Validator
   def validate(record)
     api_client = Harvest::ApiClient.new(Harvest::Organization.new( record.username, record.password,record.subdomain ))
     begin
-        who_am_i = api_client.who_am_i
+        who_am_i = api_client.get_resource(:"account/who_am_i")
     rescue
         record.errors[:base] << "There is an issue with the harvest account, please check credentials."
     end

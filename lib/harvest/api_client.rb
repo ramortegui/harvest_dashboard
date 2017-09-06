@@ -22,18 +22,6 @@ module Harvest
       connect!
     end
 
-    # Basic method to verify communications, retrieving account info.
-    # When success, it returns a hash structure with the response
-    def who_am_i
-      request = request('/account/who_am_i', :get)
-      if request.body
-        return JSON.parse(request.body)
-      else
-        @errors << "Error getting account info"
-        return nil
-      end
-    end   
-
     # Add headers to the request (Json by default)
     def headers
       {
