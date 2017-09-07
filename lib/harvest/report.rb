@@ -33,6 +33,7 @@ module Harvest
         [:"account/who_am_i", :clients, :people, :tasks , :projects].pmap{ |resource|
           api_client = Harvest::ApiClient.new(org)
           report_hash[resource] = api_client.get_resource(resource.to_s)
+          api_client = nil
         }
 
         # Initialize an array of entries
@@ -43,6 +44,7 @@ module Harvest
         report_hash[:projects].pmap{ |proy|
           api_client = Harvest::ApiClient.new(org)
           entries += api_client.get_resource("projects/#{proy["project"]["id"]}/entries?from=#{@from}&to=#{@to}")
+          api_client = nil
         }
       
         # Add entries
