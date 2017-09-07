@@ -30,22 +30,22 @@ module Harvest
         # Add to the report_hash information about each resource 
         # Celluloid pmap will help us sending requests in parallel
 
-        [:"account/who_am_i", :clients, :people, :tasks , :projects].pmap{ |resource|
-          api_client = Harvest::ApiClient.new(org)
+        api_client = Harvest::ApiClient.new(org)
+        [:"account/who_am_i", :clients, :people, :tasks , :projects].each{ |resource|
           report_hash[resource] = api_client.get_resource(resource.to_s)
-          api_client = nil
         }
+        api_client = nil
 
         # Initialize an array of entries
         entries = []
 
         # Load entries for each project
         # Celluloid pmap will help us sending requests in parallel
-        report_hash[:projects].pmap{ |proy|
-          api_client = Harvest::ApiClient.new(org)
+        api_client = Harvest::ApiClient.new(org)
+        report_hash[:projects].each { |proy|
           entries += api_client.get_resource("projects/#{proy["project"]["id"]}/entries?from=#{@from}&to=#{@to}")
-          api_client = nil
         }
+        api_client = nil
       
         # Add entries
         report_hash[:entries] = entries
