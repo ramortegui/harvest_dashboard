@@ -1,6 +1,6 @@
 namespace :entries do
   desc "Call harvest API"
-  task presist: :environment do 
+  task persist: :environment do 
       organizations = Organization.all
       from = ENV['from']
       to = ENV['to']
