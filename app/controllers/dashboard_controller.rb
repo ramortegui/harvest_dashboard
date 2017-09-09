@@ -17,12 +17,13 @@ class DashboardController < ApplicationController
       @to_show = DateTime.now.to_date.end_of_month.strftime('%Y-%m-%d')
     end
 
+    @detailed_report = Entry.where(:date => @from..@to )
     #Check exceptions running detailed report
-    begin
-      @detailed_report = Organization.detailed_report( @from, @to)
-    rescue Exception => e
-      @detailed_report = []
-      flash.now[:error] =  e.message
-    end
+    #begin
+    #  @detailed_report = Organization.detailed_report( @from, @to)
+    #rescue Exception => e
+    #  @detailed_report = []
+    #  flash.now[:error] =  e.message
+    #end
   end
 end
