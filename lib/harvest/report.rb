@@ -93,6 +93,12 @@ module Harvest
       detailed_report
     end
 
+    def persist_detailed_report(detailed_report)
+      detailed_report.map{ |org|
+        Entry.new(org).save
+      }
+    end
+
 private
     
     # Check valid date formats, in case of erro is going to raise and error 

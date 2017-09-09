@@ -76,4 +76,15 @@ class HarvestReportTest < ActiveSupport::TestCase
     assert(detailed_report.first["organization"],"Detailed report has organization.")
     assert(detailed_report.first["id"],"Detailed report has id.")
   end
+
+
+  test 'detailed report is persisted wihtout replacing data' do
+    Entry.delete_all
+    organizations = [@organization1]
+    report = Harvest::Report.new(organizations,'20160101','20170101')
+    detailed_report = report.get_detailed_report
+    report.persist_detailed_report(detailed_report)
+    assert_equal(detailed_report.count, Entry.all.count ,"All data entry has been saved.")
+  end
+
 end
