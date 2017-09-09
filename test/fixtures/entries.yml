@@ -6,9 +6,9 @@ one:
   organization: MyString
   client: MyString
   project: MyString
-  active: false
+  project_active: false
   task: MyString
-  stuff: MyString
+  person: MyString
   hours: 1.5
 
 two:
@@ -17,7 +17,7 @@ two:
   organization: MyString
   client: MyString
   project: MyString
-  active: false
+  project_active: false
   task: MyString
-  stuff: MyString
+  person: MyString
   hours: 1.5
