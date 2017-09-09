@@ -12,9 +12,11 @@ class HarvestApiClientTest < ActiveSupport::TestCase
   end
 
   test 'Get connection to the harvestapp' do
-    api_client = Harvest::ApiClient.new(@organization)
-    who_am_i = api_client.get_resource(:"account/who_am_i")
-    assert_equal(@username, who_am_i["user"]["email"] , "Check success who am I.")
+    VCR.use_cassette("harvest_api_client_test") do
+      api_client = Harvest::ApiClient.new(@organization)
+      who_am_i = api_client.get_resource(:"account/who_am_i")
+      assert_equal(@username, who_am_i["user"]["email"] , "Check success who am I.")
+    end
   end
 
 end

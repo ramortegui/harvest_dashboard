@@ -7,19 +7,23 @@ class OrganizationTest < ActiveSupport::TestCase
   end
 
   test "Organization is not valid with username, password, subdomain" do
-    organization = Organization.new({ "username" => 'ruben.amortegui@gmail.com',
-                                      "password" => 'publico01', 
-                                      "subdomain" => 'ramortegui'})
-    assert organization.valid?, 'Organization is not valid without params'
+    VCR.use_cassette("organization_test_no_valid") do
+      organization = Organization.new({ "username" => 'ruben.amortegui@gmail.com',
+                                        "password" => 'publico01', 
+                                        "subdomain" => 'ramortegui'})
+      assert organization.valid?, 'Organization is not valid without params'
+    end
   end
 
 
   test "Organization is not valid with if can't do a connection" do
-    organization = Organization.new({ "username" => 'ruben.amortegui@gmail.com',
-                                      "password" => 'publico02',
-                                      "subdomain" => 'ramortegui'})
-    assert_not organization.valid?, 'Organization is not valid because wrong credentials'
-    assert_equal ["There is an issue with the harvest account, please check credentials."], organization.errors.messages[:base],"Error message when having issues with credentials."
+    VCR.use_cassette("organization_test_no_valid_connection") do
+      organization = Organization.new({ "username" => 'ruben.amortegui@gmail.com',
+                                        "password" => 'publico02',
+                                        "subdomain" => 'ramortegui'})
+      assert_not organization.valid?, 'Organization is not valid because wrong credentials'
+      assert_equal ["There is an issue with the harvest account, please check credentials."], organization.errors.messages[:base],"Error message when having issues with credentials."
+    end
   end
 
 end

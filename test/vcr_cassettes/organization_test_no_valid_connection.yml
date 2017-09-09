@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ramortegui.harvestapp.com/account/who_am_i
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Authorization:
+      - Basic cnViZW4uYW1vcnRlZ3VpQGdtYWlsLmNvbTpwdWJsaWNvMDI=
+      User-Agent:
+      - API client Ruben
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 09 Sep 2017 18:16:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 401 Unauthorized
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, no-store, no-cache, max-age=0, must-revalidate
+      P3p:
+      - 'CP="Our privacy policy is available online: https://www.getharvest.com/services/privacy-policy"'
+      X-App-Server:
+      - app20
+      X-Robots-Tag:
+      - noindex, nofollow
+      Content-Security-Policy:
+      - 'report-uri /csp_reports; default-src *; img-src *; font-src data: cache.harvestapp.com;
+        script-src ''self'' ''unsafe-inline'' ''unsafe-eval'' https://*.google-analytics.com
+        https://*.nr-data.net https://ajax.googleapis.com cache.harvestapp.com https://js-agent.newrelic.com
+        https://js.appcenter.intuit.com https://platform.twitter.com https://www.google.com
+        https://www.googleadservices.com https://www.googletagmanager.com https://connect.facebook.net;
+        style-src ''self'' ''unsafe-inline'' cache.harvestapp.com https://js.appcenter.intuit.com
+        https://www.google.com'
+      Hint:
+      - Authentication failed for API request.
+      X-Request-Id:
+      - 8f7d7d7ea4ed9a3e462c1775db9f629c
+      X-Runtime:
+      - '0.695116'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"message":"Authentication failed for API request."}'
+    http_version: 
+  recorded_at: Sat, 09 Sep 2017 18:16:12 GMT
+recorded_with: VCR 3.0.3

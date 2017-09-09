@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ramortegui.harvestapp.com/account/who_am_i
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Authorization:
+      - Basic cnViZW4uYW1vcnRlZ3VpQGdtYWlsLmNvbTpwdWJsaWNvMDE=
+      User-Agent:
+      - API client Ruben
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 09 Sep 2017 18:09:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, no-store, no-cache, max-age=0, must-revalidate
+      P3p:
+      - 'CP="Our privacy policy is available online: https://www.getharvest.com/services/privacy-policy"'
+      X-App-Server:
+      - app4
+      X-Robots-Tag:
+      - noindex, nofollow
+      Content-Security-Policy:
+      - 'report-uri /csp_reports; default-src *; img-src *; font-src data: cache.harvestapp.com;
+        script-src ''self'' ''unsafe-inline'' ''unsafe-eval'' https://*.google-analytics.com
+        https://*.nr-data.net https://ajax.googleapis.com cache.harvestapp.com https://js-agent.newrelic.com
+        https://js.appcenter.intuit.com https://platform.twitter.com https://www.google.com
+        https://www.googleadservices.com https://www.googletagmanager.com https://connect.facebook.net;
+        style-src ''self'' ''unsafe-inline'' cache.harvestapp.com https://js.appcenter.intuit.com
+        https://www.google.com'
+      X-Request-Id:
+      - 38e158dd5747be8765ea02f66c1198a3
+      X-Runtime:
+      - '0.663097'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      X-Server:
+      - lb1
+    body:
+      encoding: ASCII-8BIT
+      string: '{"company":{"base_uri":"https://ramortegui.harvestapp.com","full_domain":"ramortegui.harvestapp.com","name":"Paradem","active":true,"week_start_day":"Monday","time_format":"hours_minutes","clock":"12h","decimal_symbol":".","color_scheme":"orange","modules":{"expenses":true,"invoices":true,"estimates":false,"approval":true,"team":true},"thousands_separator":",","plan_type":"trial"},"user":{"timezone":"Mountain
+        Time (US & Canada)","timezone_identifier":"America/Denver","timezone_utc_offset":-21600,"id":1837253,"email":"ruben.amortegui@gmail.com","admin":true,"first_name":"Ruben","last_name":"Amortegui","avatar_url":"https://cache.harvestapp.com/assets/profile_images/cornell_clock_tower.png?1504065002","project_manager":{"is_project_manager":false,"can_see_rates":true,"can_create_projects":true,"can_create_invoices":true},"timestamp_timers":false}}'
+    http_version: 
+  recorded_at: Sat, 09 Sep 2017 18:09:57 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,424 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ramortegui.harvestapp.com/account/who_am_i
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Authorization:
+      - Basic cnViZW4uYW1vcnRlZ3VpQGdtYWlsLmNvbTpwdWJsaWNvMDE=
+      User-Agent:
+      - API client Ruben
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 09 Sep 2017 18:13:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, no-store, no-cache, max-age=0, must-revalidate
+      P3p:
+      - 'CP="Our privacy policy is available online: https://www.getharvest.com/services/privacy-policy"'
+      X-App-Server:
+      - app19
+      X-Robots-Tag:
+      - noindex, nofollow
+      Content-Security-Policy:
+      - 'report-uri /csp_reports; default-src *; img-src *; font-src data: cache.harvestapp.com;
+        script-src ''self'' ''unsafe-inline'' ''unsafe-eval'' https://*.google-analytics.com
+        https://*.nr-data.net https://ajax.googleapis.com cache.harvestapp.com https://js-agent.newrelic.com
+        https://js.appcenter.intuit.com https://platform.twitter.com https://www.google.com
+        https://www.googleadservices.com https://www.googletagmanager.com https://connect.facebook.net;
+        style-src ''self'' ''unsafe-inline'' cache.harvestapp.com https://js.appcenter.intuit.com
+        https://www.google.com'
+      X-Request-Id:
+      - 7a952b963b343cb4ecca911d3bd0506e
+      X-Runtime:
+      - '0.335477'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      X-Server:
+      - lb3
+    body:
+      encoding: ASCII-8BIT
+      string: '{"company":{"base_uri":"https://ramortegui.harvestapp.com","full_domain":"ramortegui.harvestapp.com","name":"Paradem","active":true,"week_start_day":"Monday","time_format":"hours_minutes","clock":"12h","decimal_symbol":".","color_scheme":"orange","modules":{"expenses":true,"invoices":true,"estimates":false,"approval":true,"team":true},"thousands_separator":",","plan_type":"trial"},"user":{"timezone":"Mountain
+        Time (US & Canada)","timezone_identifier":"America/Denver","timezone_utc_offset":-21600,"id":1837253,"email":"ruben.amortegui@gmail.com","admin":true,"first_name":"Ruben","last_name":"Amortegui","avatar_url":"https://cache.harvestapp.com/assets/profile_images/cornell_clock_tower.png?1504065002","project_manager":{"is_project_manager":false,"can_see_rates":true,"can_create_projects":true,"can_create_invoices":true},"timestamp_timers":false}}'
+    http_version: 
+  recorded_at: Sat, 09 Sep 2017 18:13:37 GMT
+- request:
+    method: get
+    uri: https://ramortegui.harvestapp.com/clients
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Authorization:
+      - Basic cnViZW4uYW1vcnRlZ3VpQGdtYWlsLmNvbTpwdWJsaWNvMDE=
+      User-Agent:
+      - API client Ruben
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 09 Sep 2017 18:13:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, no-store, no-cache, max-age=0, must-revalidate
+      P3p:
+      - 'CP="Our privacy policy is available online: https://www.getharvest.com/services/privacy-policy"'
+      X-App-Server:
+      - app3
+      X-Robots-Tag:
+      - noindex, nofollow
+      Content-Security-Policy:
+      - 'report-uri /csp_reports; default-src *; img-src *; font-src data: cache.harvestapp.com;
+        script-src ''self'' ''unsafe-inline'' ''unsafe-eval'' https://*.google-analytics.com
+        https://*.nr-data.net https://ajax.googleapis.com cache.harvestapp.com https://js-agent.newrelic.com
+        https://js.appcenter.intuit.com https://platform.twitter.com https://www.google.com
+        https://www.googleadservices.com https://www.googletagmanager.com https://connect.facebook.net;
+        style-src ''self'' ''unsafe-inline'' cache.harvestapp.com https://js.appcenter.intuit.com
+        https://www.google.com'
+      X-Request-Id:
+      - 4978fcf284e018ffb8b9f090bbcf37f6
+      X-Runtime:
+      - '0.686782'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      X-Server:
+      - lb1
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"client":{"id":5948162,"name":"Bubble Gum Factory Ltd.","active":true,"currency":"Canadian
+        Dollar - CAD","highrise_id":null,"updated_at":"2017-09-01T03:44:52Z","created_at":"2017-09-01T03:44:52Z","statement_key":"a1a64f80c37fabbad59022a56fe54624","default_invoice_kind":null,"default_invoice_timeframe":null,"address":null,"delete_at":null,"currency_symbol":"$","details":null,"last_invoice_kind":null}}]'
+    http_version: 
+  recorded_at: Sat, 09 Sep 2017 18:13:42 GMT
+- request:
+    method: get
+    uri: https://ramortegui.harvestapp.com/people
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Authorization:
+      - Basic cnViZW4uYW1vcnRlZ3VpQGdtYWlsLmNvbTpwdWJsaWNvMDE=
+      User-Agent:
+      - API client Ruben
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 09 Sep 2017 18:13:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, no-store, no-cache, max-age=0, must-revalidate
+      P3p:
+      - 'CP="Our privacy policy is available online: https://www.getharvest.com/services/privacy-policy"'
+      X-App-Server:
+      - app7
+      X-Robots-Tag:
+      - noindex, nofollow
+      Content-Security-Policy:
+      - 'report-uri /csp_reports; default-src *; img-src *; font-src data: cache.harvestapp.com;
+        script-src ''self'' ''unsafe-inline'' ''unsafe-eval'' https://*.google-analytics.com
+        https://*.nr-data.net https://ajax.googleapis.com cache.harvestapp.com https://js-agent.newrelic.com
+        https://js.appcenter.intuit.com https://platform.twitter.com https://www.google.com
+        https://www.googleadservices.com https://www.googletagmanager.com https://connect.facebook.net;
+        style-src ''self'' ''unsafe-inline'' cache.harvestapp.com https://js.appcenter.intuit.com
+        https://www.google.com'
+      X-Request-Id:
+      - 97f67d2ff01fa7cc2595387369996354
+      X-Runtime:
+      - '0.803358'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      X-Server:
+      - lb3
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"user":{"id":1839437,"email":"ruben+2@yoursole.com","password":null,"created_at":"2017-09-01T03:44:41Z","company_id":681663,"is_admin":false,"first_name":"Ethan","last_name":"Muchoki","timezone":"Mountain
+        Time (US & Canada)","is_contractor":false,"telephone":"","is_active":true,"has_access_to_all_future_projects":false,"default_hourly_rate":null,"email_after_submit":true,"department":"","preferred_entry_method":"daily","preferred_approval_screen":"timeframe","wants_newsletter":false,"updated_at":"2017-09-01T03:44:41Z","first_timer":true,"is_project_manager":false,"can_see_rates":false,"can_create_invoices":false,"can_create_projects":false,"cost_rate":null,"identity_account_id":822595,"identity_user_id":null,"weekly_capacity":126000}},{"user":{"id":1839436,"email":"ruben+1@yoursole.com","password":null,"created_at":"2017-09-01T03:44:07Z","company_id":681663,"is_admin":false,"first_name":"Liam","last_name":"Baker","timezone":"Mountain
+        Time (US & Canada)","is_contractor":false,"telephone":"","is_active":true,"has_access_to_all_future_projects":false,"default_hourly_rate":null,"email_after_submit":true,"department":"","preferred_entry_method":"daily","preferred_approval_screen":"timeframe","wants_newsletter":false,"updated_at":"2017-09-04T19:29:01Z","first_timer":true,"is_project_manager":false,"can_see_rates":false,"can_create_invoices":false,"can_create_projects":false,"cost_rate":null,"identity_account_id":822595,"identity_user_id":null,"weekly_capacity":126000}},{"user":{"id":1839435,"email":"ruben+5@yoursole.com","password":"$2a$12$Saq7fAyBuk8ULM1sInQcO.OSmegbiEmwcgBec7pwR22hz54.vZXv.","created_at":"2017-09-01T03:43:10Z","company_id":681663,"is_admin":false,"first_name":"Olivia","last_name":"Finkelstein","timezone":"Mountain
+        Time (US & Canada)","is_contractor":false,"telephone":"","is_active":true,"has_access_to_all_future_projects":false,"default_hourly_rate":null,"email_after_submit":true,"department":"","preferred_entry_method":"daily","preferred_approval_screen":"timeframe","wants_newsletter":false,"updated_at":"2017-09-03T04:43:04Z","first_timer":true,"is_project_manager":false,"can_see_rates":false,"can_create_invoices":false,"can_create_projects":false,"cost_rate":null,"identity_account_id":822595,"identity_user_id":1364319,"weekly_capacity":126000}},{"user":{"id":1837253,"email":"ruben.amortegui@gmail.com","password":"$2a$12$9AAuCIg1nf7zDhlrNoj6Zu4wZmG3lT/U26QavCXkRJMGC4pUqEsI6","created_at":"2017-08-30T03:50:01Z","company_id":681663,"is_admin":true,"first_name":"Ruben","last_name":"Amortegui","timezone":"Mountain
+        Time (US & Canada)","is_contractor":false,"telephone":"","is_active":true,"has_access_to_all_future_projects":false,"default_hourly_rate":null,"email_after_submit":true,"department":null,"preferred_entry_method":"daily","preferred_approval_screen":"timeframe","wants_newsletter":true,"updated_at":"2017-09-02T05:03:59Z","first_timer":true,"is_project_manager":false,"can_see_rates":true,"can_create_invoices":false,"can_create_projects":false,"cost_rate":null,"identity_account_id":822595,"identity_user_id":1362472,"weekly_capacity":126000}}]'
+    http_version: 
+  recorded_at: Sat, 09 Sep 2017 18:13:47 GMT
+- request:
+    method: get
+    uri: https://ramortegui.harvestapp.com/tasks
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Authorization:
+      - Basic cnViZW4uYW1vcnRlZ3VpQGdtYWlsLmNvbTpwdWJsaWNvMDE=
+      User-Agent:
+      - API client Ruben
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 09 Sep 2017 18:13:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, no-store, no-cache, max-age=0, must-revalidate
+      P3p:
+      - 'CP="Our privacy policy is available online: https://www.getharvest.com/services/privacy-policy"'
+      X-App-Server:
+      - app2
+      X-Robots-Tag:
+      - noindex, nofollow
+      Content-Security-Policy:
+      - 'report-uri /csp_reports; default-src *; img-src *; font-src data: cache.harvestapp.com;
+        script-src ''self'' ''unsafe-inline'' ''unsafe-eval'' https://*.google-analytics.com
+        https://*.nr-data.net https://ajax.googleapis.com cache.harvestapp.com https://js-agent.newrelic.com
+        https://js.appcenter.intuit.com https://platform.twitter.com https://www.google.com
+        https://www.googleadservices.com https://www.googletagmanager.com https://connect.facebook.net;
+        style-src ''self'' ''unsafe-inline'' cache.harvestapp.com https://js.appcenter.intuit.com
+        https://www.google.com'
+      X-Request-Id:
+      - 69e942ea8e1055fa7c0a722056c7f9c7
+      X-Runtime:
+      - '0.811280'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      X-Server:
+      - lb2
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"task":{"id":8404989,"name":"Business Modelling","billable_by_default":true,"created_at":"2017-09-01T03:44:54Z","updated_at":"2017-09-01T03:44:54Z","is_default":false,"default_hourly_rate":null,"deactivated":false}},{"task":{"id":8404990,"name":"Incredible
+        Software Development","billable_by_default":true,"created_at":"2017-09-01T03:44:56Z","updated_at":"2017-09-01T03:44:56Z","is_default":false,"default_hourly_rate":null,"deactivated":false}},{"task":{"id":8404988,"name":"Kickass
+        User Experience","billable_by_default":true,"created_at":"2017-09-01T03:44:52Z","updated_at":"2017-09-01T03:44:52Z","is_default":false,"default_hourly_rate":null,"deactivated":false}}]'
+    http_version: 
+  recorded_at: Sat, 09 Sep 2017 18:13:50 GMT
+- request:
+    method: get
+    uri: https://ramortegui.harvestapp.com/projects
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Authorization:
+      - Basic cnViZW4uYW1vcnRlZ3VpQGdtYWlsLmNvbTpwdWJsaWNvMDE=
+      User-Agent:
+      - API client Ruben
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 09 Sep 2017 18:13:53 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, no-store, no-cache, max-age=0, must-revalidate
+      P3p:
+      - 'CP="Our privacy policy is available online: https://www.getharvest.com/services/privacy-policy"'
+      X-App-Server:
+      - app21
+      X-Robots-Tag:
+      - noindex, nofollow
+      Content-Security-Policy:
+      - 'report-uri /csp_reports; default-src *; img-src *; font-src data: cache.harvestapp.com;
+        script-src ''self'' ''unsafe-inline'' ''unsafe-eval'' https://*.google-analytics.com
+        https://*.nr-data.net https://ajax.googleapis.com cache.harvestapp.com https://js-agent.newrelic.com
+        https://js.appcenter.intuit.com https://platform.twitter.com https://www.google.com
+        https://www.googleadservices.com https://www.googletagmanager.com https://connect.facebook.net;
+        style-src ''self'' ''unsafe-inline'' cache.harvestapp.com https://js.appcenter.intuit.com
+        https://www.google.com'
+      X-Request-Id:
+      - 4ce62ffe3e5bacdfca9ea5024808a480
+      X-Runtime:
+      - '0.350881'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      X-Server:
+      - lb1
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"project":{"id":14921422,"client_id":5948162,"name":"Harvesting Bubble
+        Gum Batter","code":null,"active":true,"bill_by":"none","budget":null,"budget_by":"none","notify_when_over_budget":false,"over_budget_notification_percentage":80.0,"over_budget_notified_at":null,"show_budget_to_all":false,"created_at":"2017-09-04T19:29:33Z","updated_at":"2017-09-04T19:29:33Z","starts_on":null,"ends_on":null,"estimate":null,"estimate_by":"none","is_fixed_fee":false,"billable":true,"hint_earliest_record_at":"2016-09-01","hint_latest_record_at":"2016-12-30","notes":"","hourly_rate":null,"cost_budget":null,"cost_budget_include_expenses":false}}]'
+    http_version: 
+  recorded_at: Sat, 09 Sep 2017 18:13:53 GMT
+- request:
+    method: get
+    uri: https://ramortegui.harvestapp.com/projects/14921422/entries?from=20160101&to=20170101
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Authorization:
+      - Basic cnViZW4uYW1vcnRlZ3VpQGdtYWlsLmNvbTpwdWJsaWNvMDE=
+      User-Agent:
+      - API client Ruben
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 09 Sep 2017 18:13:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, no-store, no-cache, max-age=0, must-revalidate
+      P3p:
+      - 'CP="Our privacy policy is available online: https://www.getharvest.com/services/privacy-policy"'
+      X-App-Server:
+      - app8
+      X-Robots-Tag:
+      - noindex, nofollow
+      Content-Security-Policy:
+      - 'report-uri /csp_reports; default-src *; img-src *; font-src data: cache.harvestapp.com;
+        script-src ''self'' ''unsafe-inline'' ''unsafe-eval'' https://*.google-analytics.com
+        https://*.nr-data.net https://ajax.googleapis.com cache.harvestapp.com https://js-agent.newrelic.com
+        https://js.appcenter.intuit.com https://platform.twitter.com https://www.google.com
+        https://www.googleadservices.com https://www.googletagmanager.com https://connect.facebook.net;
+        style-src ''self'' ''unsafe-inline'' cache.harvestapp.com https://js.appcenter.intuit.com
+        https://www.google.com'
+      X-Request-Id:
+      - 3041d0133387581eedefb65b77c8cfc3
+      X-Runtime:
+      - '0.681152'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      X-Server:
+      - lb4
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"day_entry":{"id":667982436,"notes":null,"spent_at":"2016-09-01","hours":6.5,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:54Z","updated_at":"2017-09-04T19:29:54Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982435,"notes":null,"spent_at":"2016-09-02","hours":1.5,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:54Z","updated_at":"2017-09-04T19:29:54Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982433,"notes":null,"spent_at":"2016-09-05","hours":0.58,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:53Z","updated_at":"2017-09-04T19:29:53Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982468,"notes":null,"spent_at":"2016-09-05","hours":0.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:57Z","updated_at":"2017-09-04T19:29:57Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982432,"notes":null,"spent_at":"2016-09-06","hours":1.5,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:53Z","updated_at":"2017-09-04T19:29:53Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982467,"notes":null,"spent_at":"2016-09-06","hours":0.5,"user_id":1839435,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:57Z","updated_at":"2017-09-04T19:29:57Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982430,"notes":null,"spent_at":"2016-09-07","hours":4.75,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:53Z","updated_at":"2017-09-04T19:29:53Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982431,"notes":null,"spent_at":"2016-09-07","hours":1.0,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:53Z","updated_at":"2017-09-04T19:29:53Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982463,"notes":null,"spent_at":"2016-09-07","hours":2.0,"user_id":1839435,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:56Z","updated_at":"2017-09-04T19:29:56Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982465,"notes":null,"spent_at":"2016-09-07","hours":1.0,"user_id":1839435,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:57Z","updated_at":"2017-09-04T19:29:57Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982429,"notes":null,"spent_at":"2016-09-08","hours":6.92,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:52Z","updated_at":"2017-09-04T19:29:52Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982427,"notes":null,"spent_at":"2016-09-09","hours":1.33,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:52Z","updated_at":"2017-09-04T19:29:52Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982462,"notes":null,"spent_at":"2016-09-09","hours":1.0,"user_id":1839435,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:56Z","updated_at":"2017-09-04T19:29:56Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982426,"notes":null,"spent_at":"2016-09-12","hours":3.5,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:52Z","updated_at":"2017-09-04T19:29:52Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982461,"notes":null,"spent_at":"2016-09-12","hours":1.0,"user_id":1839435,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:56Z","updated_at":"2017-09-04T19:29:56Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982424,"notes":null,"spent_at":"2016-09-13","hours":7.5,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:52Z","updated_at":"2017-09-04T19:29:52Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982421,"notes":null,"spent_at":"2016-09-14","hours":6.67,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:52Z","updated_at":"2017-09-04T19:29:52Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982459,"notes":null,"spent_at":"2016-09-14","hours":0.25,"user_id":1839435,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:56Z","updated_at":"2017-09-04T19:29:56Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982419,"notes":null,"spent_at":"2016-09-15","hours":8.17,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:51Z","updated_at":"2017-09-04T19:29:51Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982418,"notes":null,"spent_at":"2016-09-16","hours":4.42,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:51Z","updated_at":"2017-09-04T19:29:51Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982417,"notes":null,"spent_at":"2016-09-20","hours":3.25,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:51Z","updated_at":"2017-09-04T19:29:51Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982416,"notes":null,"spent_at":"2016-09-21","hours":4.33,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:51Z","updated_at":"2017-09-04T19:29:51Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982415,"notes":null,"spent_at":"2016-09-22","hours":6.42,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:51Z","updated_at":"2017-09-04T19:29:51Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982414,"notes":null,"spent_at":"2016-09-23","hours":3.42,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:51Z","updated_at":"2017-09-04T19:29:51Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982410,"notes":null,"spent_at":"2016-09-25","hours":6.92,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:50Z","updated_at":"2017-09-04T19:29:50Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982451,"notes":null,"spent_at":"2016-09-26","hours":0.39,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:55Z","updated_at":"2017-09-04T19:29:55Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982409,"notes":null,"spent_at":"2016-09-27","hours":9.33,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:50Z","updated_at":"2017-09-04T19:29:50Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982448,"notes":null,"spent_at":"2016-09-27","hours":0.25,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:55Z","updated_at":"2017-09-04T19:29:55Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982408,"notes":null,"spent_at":"2016-09-28","hours":7.67,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:50Z","updated_at":"2017-09-04T19:29:50Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982443,"notes":null,"spent_at":"2016-09-28","hours":0.67,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:54Z","updated_at":"2017-09-04T19:29:54Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982446,"notes":null,"spent_at":"2016-09-28","hours":1.82,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:55Z","updated_at":"2017-09-04T19:29:55Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982407,"notes":null,"spent_at":"2016-09-29","hours":2.58,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:49Z","updated_at":"2017-09-04T19:29:49Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982439,"notes":null,"spent_at":"2016-09-29","hours":0.49,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:54Z","updated_at":"2017-09-04T19:29:54Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982442,"notes":null,"spent_at":"2016-09-29","hours":1.31,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:54Z","updated_at":"2017-09-04T19:29:54Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982438,"notes":null,"spent_at":"2016-10-02","hours":1.75,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:54Z","updated_at":"2017-09-04T19:29:54Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982405,"notes":null,"spent_at":"2016-10-05","hours":1.58,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:49Z","updated_at":"2017-09-04T19:29:49Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982404,"notes":null,"spent_at":"2016-10-19","hours":2.67,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:49Z","updated_at":"2017-09-04T19:29:49Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982401,"notes":null,"spent_at":"2016-10-20","hours":5.67,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:48Z","updated_at":"2017-09-04T19:29:48Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982399,"notes":null,"spent_at":"2016-10-21","hours":4.17,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:48Z","updated_at":"2017-09-04T19:29:48Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982398,"notes":null,"spent_at":"2016-10-24","hours":1.58,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:48Z","updated_at":"2017-09-04T19:29:48Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982394,"notes":null,"spent_at":"2016-10-25","hours":3.83,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:48Z","updated_at":"2017-09-04T19:29:48Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982392,"notes":null,"spent_at":"2016-10-26","hours":3.08,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:47Z","updated_at":"2017-09-04T19:29:47Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982393,"notes":null,"spent_at":"2016-10-26","hours":0.75,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:47Z","updated_at":"2017-09-04T19:29:47Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982391,"notes":null,"spent_at":"2016-10-27","hours":4.25,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:46Z","updated_at":"2017-09-04T19:29:46Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982389,"notes":null,"spent_at":"2016-10-28","hours":2.5,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:46Z","updated_at":"2017-09-04T19:29:46Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982388,"notes":null,"spent_at":"2016-10-31","hours":0.67,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:46Z","updated_at":"2017-09-04T19:29:46Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982387,"notes":null,"spent_at":"2016-11-03","hours":0.58,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:45Z","updated_at":"2017-09-04T19:29:45Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982386,"notes":null,"spent_at":"2016-11-04","hours":0.33,"user_id":1839436,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:45Z","updated_at":"2017-09-04T19:29:45Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982385,"notes":null,"spent_at":"2016-11-07","hours":0.5,"user_id":1839436,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:45Z","updated_at":"2017-09-04T19:29:45Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982384,"notes":null,"spent_at":"2016-11-08","hours":1.92,"user_id":1839436,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:45Z","updated_at":"2017-09-04T19:29:45Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982382,"notes":null,"spent_at":"2016-11-09","hours":7.17,"user_id":1839436,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:45Z","updated_at":"2017-09-04T19:29:45Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982380,"notes":null,"spent_at":"2016-11-10","hours":3.42,"user_id":1839436,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:45Z","updated_at":"2017-09-04T19:29:45Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982375,"notes":null,"spent_at":"2016-11-14","hours":4.25,"user_id":1839436,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:45Z","updated_at":"2017-09-04T19:29:45Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982372,"notes":null,"spent_at":"2016-11-15","hours":4.0,"user_id":1839436,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:44Z","updated_at":"2017-09-04T19:29:44Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982369,"notes":null,"spent_at":"2016-11-16","hours":5.92,"user_id":1839436,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:44Z","updated_at":"2017-09-04T19:29:44Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982368,"notes":null,"spent_at":"2016-11-17","hours":5.42,"user_id":1839436,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:44Z","updated_at":"2017-09-04T19:29:44Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982367,"notes":null,"spent_at":"2016-11-18","hours":2.58,"user_id":1839436,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:44Z","updated_at":"2017-09-04T19:29:44Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982366,"notes":null,"spent_at":"2016-11-21","hours":2.58,"user_id":1839436,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:44Z","updated_at":"2017-09-04T19:29:44Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982365,"notes":null,"spent_at":"2016-11-22","hours":3.17,"user_id":1839436,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:44Z","updated_at":"2017-09-04T19:29:44Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982363,"notes":null,"spent_at":"2016-11-23","hours":4.33,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:43Z","updated_at":"2017-09-04T19:29:43Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982362,"notes":null,"spent_at":"2016-11-24","hours":0.33,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:43Z","updated_at":"2017-09-04T19:29:43Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982515,"notes":null,"spent_at":"2016-11-24","hours":1.0,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:04Z","updated_at":"2017-09-04T19:30:04Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982513,"notes":null,"spent_at":"2016-11-25","hours":4.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:04Z","updated_at":"2017-09-04T19:30:04Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982511,"notes":null,"spent_at":"2016-11-26","hours":0.5,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:04Z","updated_at":"2017-09-04T19:30:04Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982360,"notes":null,"spent_at":"2016-11-28","hours":3.17,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:43Z","updated_at":"2017-09-04T19:29:43Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982506,"notes":null,"spent_at":"2016-11-28","hours":0.5,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:03Z","updated_at":"2017-09-04T19:30:03Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982507,"notes":null,"spent_at":"2016-11-28","hours":2.5,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:03Z","updated_at":"2017-09-04T19:30:03Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982509,"notes":null,"spent_at":"2016-11-28","hours":2.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:04Z","updated_at":"2017-09-04T19:30:04Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982510,"notes":null,"spent_at":"2016-11-28","hours":0.5,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:04Z","updated_at":"2017-09-04T19:30:04Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982359,"notes":null,"spent_at":"2016-11-29","hours":5.0,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:43Z","updated_at":"2017-09-04T19:29:43Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982503,"notes":null,"spent_at":"2016-11-29","hours":2.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:03Z","updated_at":"2017-09-04T19:30:03Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982504,"notes":null,"spent_at":"2016-11-29","hours":1.0,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:03Z","updated_at":"2017-09-04T19:30:03Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982314,"notes":null,"spent_at":"2016-11-30","hours":0.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:35Z","updated_at":"2017-09-04T19:29:35Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982358,"notes":null,"spent_at":"2016-11-30","hours":3.33,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:43Z","updated_at":"2017-09-04T19:29:43Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982500,"notes":null,"spent_at":"2016-11-30","hours":0.5,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:03Z","updated_at":"2017-09-04T19:30:03Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982501,"notes":null,"spent_at":"2016-11-30","hours":0.75,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:03Z","updated_at":"2017-09-04T19:30:03Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982502,"notes":null,"spent_at":"2016-11-30","hours":1.75,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:03Z","updated_at":"2017-09-04T19:30:03Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982313,"notes":null,"spent_at":"2016-12-01","hours":1.0,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:35Z","updated_at":"2017-09-04T19:29:35Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982335,"notes":null,"spent_at":"2016-12-01","hours":6.82,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:39Z","updated_at":"2017-09-04T19:29:39Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982355,"notes":null,"spent_at":"2016-12-01","hours":5.08,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:43Z","updated_at":"2017-09-04T19:29:43Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982492,"notes":null,"spent_at":"2016-12-01","hours":0.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:02Z","updated_at":"2017-09-04T19:30:02Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982496,"notes":null,"spent_at":"2016-12-01","hours":1.5,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:02Z","updated_at":"2017-09-04T19:30:02Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982497,"notes":null,"spent_at":"2016-12-01","hours":0.5,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:02Z","updated_at":"2017-09-04T19:30:02Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982499,"notes":null,"spent_at":"2016-12-01","hours":0.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:02Z","updated_at":"2017-09-04T19:30:02Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982310,"notes":null,"spent_at":"2016-12-02","hours":0.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:34Z","updated_at":"2017-09-04T19:29:34Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982333,"notes":null,"spent_at":"2016-12-02","hours":1.79,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:38Z","updated_at":"2017-09-04T19:29:38Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982354,"notes":null,"spent_at":"2016-12-02","hours":3.75,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:42Z","updated_at":"2017-09-04T19:29:42Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982486,"notes":null,"spent_at":"2016-12-02","hours":0.5,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:01Z","updated_at":"2017-09-04T19:30:01Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982487,"notes":null,"spent_at":"2016-12-02","hours":0.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:01Z","updated_at":"2017-09-04T19:30:01Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982489,"notes":null,"spent_at":"2016-12-02","hours":0.75,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:01Z","updated_at":"2017-09-04T19:30:01Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982309,"notes":null,"spent_at":"2016-12-05","hours":1.0,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:34Z","updated_at":"2017-09-04T19:29:34Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982332,"notes":null,"spent_at":"2016-12-05","hours":5.48,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:38Z","updated_at":"2017-09-04T19:29:38Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982353,"notes":null,"spent_at":"2016-12-05","hours":4.5,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:42Z","updated_at":"2017-09-04T19:29:42Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982483,"notes":null,"spent_at":"2016-12-05","hours":0.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:00Z","updated_at":"2017-09-04T19:30:00Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982485,"notes":null,"spent_at":"2016-12-05","hours":1.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:00Z","updated_at":"2017-09-04T19:30:00Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982328,"notes":null,"spent_at":"2016-12-06","hours":4.09,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:38Z","updated_at":"2017-09-04T19:29:38Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982330,"notes":null,"spent_at":"2016-12-06","hours":0.79,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:38Z","updated_at":"2017-09-04T19:29:38Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982352,"notes":null,"spent_at":"2016-12-06","hours":7.33,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:42Z","updated_at":"2017-09-04T19:29:42Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982481,"notes":null,"spent_at":"2016-12-06","hours":0.5,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:00Z","updated_at":"2017-09-04T19:30:00Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982482,"notes":null,"spent_at":"2016-12-06","hours":0.75,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:30:00Z","updated_at":"2017-09-04T19:30:00Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982305,"notes":null,"spent_at":"2016-12-07","hours":0.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:34Z","updated_at":"2017-09-04T19:29:34Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982327,"notes":null,"spent_at":"2016-12-07","hours":6.78,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:38Z","updated_at":"2017-09-04T19:29:38Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982477,"notes":null,"spent_at":"2016-12-07","hours":2.0,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:59Z","updated_at":"2017-09-04T19:29:59Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982478,"notes":null,"spent_at":"2016-12-07","hours":0.5,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:59Z","updated_at":"2017-09-04T19:29:59Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982480,"notes":null,"spent_at":"2016-12-07","hours":0.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:59Z","updated_at":"2017-09-04T19:29:59Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982350,"notes":null,"spent_at":"2016-12-08","hours":4.17,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:42Z","updated_at":"2017-09-04T19:29:42Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982326,"notes":null,"spent_at":"2016-12-09","hours":0.6,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:37Z","updated_at":"2017-09-04T19:29:37Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982349,"notes":null,"spent_at":"2016-12-09","hours":4.0,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:42Z","updated_at":"2017-09-04T19:29:42Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982348,"notes":null,"spent_at":"2016-12-12","hours":5.83,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:41Z","updated_at":"2017-09-04T19:29:41Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982476,"notes":null,"spent_at":"2016-12-12","hours":0.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:59Z","updated_at":"2017-09-04T19:29:59Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982325,"notes":null,"spent_at":"2016-12-13","hours":0.78,"user_id":1839437,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:37Z","updated_at":"2017-09-04T19:29:37Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982347,"notes":null,"spent_at":"2016-12-13","hours":7.42,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:41Z","updated_at":"2017-09-04T19:29:41Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982323,"notes":null,"spent_at":"2016-12-14","hours":0.04,"user_id":1839437,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:37Z","updated_at":"2017-09-04T19:29:37Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982324,"notes":null,"spent_at":"2016-12-14","hours":2.41,"user_id":1839437,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:37Z","updated_at":"2017-09-04T19:29:37Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982346,"notes":null,"spent_at":"2016-12-14","hours":6.17,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:41Z","updated_at":"2017-09-04T19:29:41Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982473,"notes":null,"spent_at":"2016-12-14","hours":1.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:58Z","updated_at":"2017-09-04T19:29:58Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982474,"notes":null,"spent_at":"2016-12-14","hours":0.5,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:58Z","updated_at":"2017-09-04T19:29:58Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982322,"notes":null,"spent_at":"2016-12-15","hours":2.15,"user_id":1839437,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:36Z","updated_at":"2017-09-04T19:29:36Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982345,"notes":null,"spent_at":"2016-12-15","hours":3.75,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:41Z","updated_at":"2017-09-04T19:29:41Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982319,"notes":null,"spent_at":"2016-12-16","hours":1.89,"user_id":1839437,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:36Z","updated_at":"2017-09-04T19:29:36Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982343,"notes":null,"spent_at":"2016-12-16","hours":3.08,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:41Z","updated_at":"2017-09-04T19:29:41Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982342,"notes":null,"spent_at":"2016-12-19","hours":5.08,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:40Z","updated_at":"2017-09-04T19:29:40Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982458,"notes":null,"spent_at":"2016-12-19","hours":2.28,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:56Z","updated_at":"2017-09-04T19:29:56Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982472,"notes":null,"spent_at":"2016-12-19","hours":0.5,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:58Z","updated_at":"2017-09-04T19:29:58Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982341,"notes":null,"spent_at":"2016-12-20","hours":6.42,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:40Z","updated_at":"2017-09-04T19:29:40Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982318,"notes":null,"spent_at":"2016-12-21","hours":2.63,"user_id":1839437,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:36Z","updated_at":"2017-09-04T19:29:36Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982340,"notes":null,"spent_at":"2016-12-21","hours":7.25,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:39Z","updated_at":"2017-09-04T19:29:39Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982471,"notes":null,"spent_at":"2016-12-21","hours":0.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:58Z","updated_at":"2017-09-04T19:29:58Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982315,"notes":null,"spent_at":"2016-12-22","hours":0.45,"user_id":1839437,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:35Z","updated_at":"2017-09-04T19:29:35Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982316,"notes":null,"spent_at":"2016-12-22","hours":0.13,"user_id":1839437,"project_id":14921422,"task_id":8404989,"created_at":"2017-09-04T19:29:35Z","updated_at":"2017-09-04T19:29:35Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982338,"notes":null,"spent_at":"2016-12-22","hours":5.92,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:39Z","updated_at":"2017-09-04T19:29:39Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982457,"notes":null,"spent_at":"2016-12-22","hours":0.21,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:56Z","updated_at":"2017-09-04T19:29:56Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982303,"notes":null,"spent_at":"2016-12-23","hours":0.75,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:33Z","updated_at":"2017-09-04T19:29:33Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982470,"notes":null,"spent_at":"2016-12-23","hours":2.25,"user_id":1839435,"project_id":14921422,"task_id":8404988,"created_at":"2017-09-04T19:29:57Z","updated_at":"2017-09-04T19:29:57Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982454,"notes":null,"spent_at":"2016-12-28","hours":0.49,"user_id":1839437,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:55Z","updated_at":"2017-09-04T19:29:55Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982336,"notes":null,"spent_at":"2016-12-29","hours":5.5,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:39Z","updated_at":"2017-09-04T19:29:39Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}},{"day_entry":{"id":667982337,"notes":null,"spent_at":"2016-12-30","hours":3.08,"user_id":1839436,"project_id":14921422,"task_id":8404990,"created_at":"2017-09-04T19:29:39Z","updated_at":"2017-09-04T19:29:39Z","adjustment_record":false,"timer_started_at":null,"is_closed":false,"is_billed":false}}]'
+    http_version: 
+  recorded_at: Sat, 09 Sep 2017 18:13:56 GMT
+recorded_with: VCR 3.0.3

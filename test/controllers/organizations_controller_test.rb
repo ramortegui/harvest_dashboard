@@ -16,11 +16,13 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create organization" do
-    assert_difference('Organization.count') do
-      post organizations_url, params: { organization: { password: @organization.password, subdomain: @organization.subdomain, username: @organization.username } }
-    end
+    VCR.use_cassette("organization_controller_should_create_organiztion") do
+      assert_difference('Organization.count') do
+        post organizations_url, params: { organization: { password: @organization.password, subdomain: @organization.subdomain, username: @organization.username } }
+      end
 
-    assert_redirected_to organization_url(Organization.last)
+      assert_redirected_to organization_url(Organization.last)
+    end
   end
 
   test "should show organization" do
@@ -34,8 +36,10 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update organization" do
-    patch organization_url(@organization), params: { organization: { password: @organization.password, subdomain: @organization.subdomain, username: @organization.username } }
-    assert_redirected_to organization_url(@organization)
+    VCR.use_cassette("organization_controller_test_should_update_organization") do
+      patch organization_url(@organization), params: { organization: { password: @organization.password, subdomain: @organization.subdomain, username: @organization.username } }
+      assert_redirected_to organization_url(@organization)
+    end
   end
 
   test "should destroy organization" do
