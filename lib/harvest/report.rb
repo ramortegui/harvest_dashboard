@@ -76,6 +76,7 @@ module Harvest
           project_id = projects[day_entry["project_id"]]["id"]
           client_id = projects[day_entry["project_id"]]["client_id"]
           hash_entry = {
+            "id" => day_entry["id"],
             "date" => day_entry["spent_at"],
             "project" => projects[project_id]["name"],
             "client" => clients[client_id]["name"],
@@ -91,6 +92,7 @@ module Harvest
       }
       detailed_report
     end
+
 private
     
     # Check valid date formats, in case of erro is going to raise and error 

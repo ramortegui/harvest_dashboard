@@ -74,5 +74,6 @@ class HarvestReportTest < ActiveSupport::TestCase
     assert(detailed_report.first["person"],"Detailed report has person.")
     assert(detailed_report.first["hours"],"Detailed report has hours.")
     assert(detailed_report.first["organization"],"Detailed report has organization.")
+    assert(detailed_report.first["id"],"Detailed report has id.")
   end
 end
