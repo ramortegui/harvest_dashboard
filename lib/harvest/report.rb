@@ -95,7 +95,13 @@ module Harvest
 
     def persist_detailed_report(detailed_report)
       detailed_report.map{ |org|
-        Entry.new(org).save
+        begin
+          Entry.find_or_create_by!(org)
+        rescue
+          entry = Entry.find_by_id(org["id"])
+          org.delete("id")
+          entry.update(org)
+        end
       }
     end
 

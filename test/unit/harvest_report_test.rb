@@ -87,4 +87,22 @@ class HarvestReportTest < ActiveSupport::TestCase
     assert_equal(detailed_report.count, Entry.all.count ,"All data entry has been saved.")
   end
 
+
+  test 'detailed report is persisted updating data data' do
+    Entry.delete_all
+    organizations = [@organization1]
+    report = Harvest::Report.new(organizations,'20160101','20170101')
+    detailed_report = report.get_detailed_report
+    report.persist_detailed_report(detailed_report)
+    entry = detailed_report.entries.first
+    id = entry["id"]
+    entry["hours"] = 10
+    report.persist_detailed_report(detailed_report)
+    assert_equal(detailed_report.count, Entry.all.count ,"Data stay in the same way.")
+    report.persist_detailed_report(detailed_report)
+    assert_equal(detailed_report.count, Entry.all.count ,"Entries didn;t grow with an update.")
+    assert_equal(Entry.find(id).hours, entry["hours"] ,"Data has been updated")
+
+  end
+
 end
