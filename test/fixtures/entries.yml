@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entry_id: 
+  date: 2017-09-08
+  organization: MyString
+  client: MyString
+  project: MyString
+  active: false
+  task: MyString
+  stuff: MyString
+  hours: 1.5
+
+two:
+  entry_id: 
+  date: 2017-09-08
+  organization: MyString
+  client: MyString
+  project: MyString
+  active: false
+  task: MyString
+  stuff: MyString
+  hours: 1.5

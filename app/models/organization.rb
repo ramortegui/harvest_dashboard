@@ -14,4 +14,8 @@ class Organization < ApplicationRecord
     end
     @detailed_report
   end
+
+  def self.persist_detailed_report(report)
+
+  end
 end
