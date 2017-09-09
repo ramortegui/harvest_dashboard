@@ -14,11 +14,8 @@ class Organization < ApplicationRecord
     end
     @detailed_report
   end
-  # Save/Update local db
-  def self.persist_detailed_report(from,to)
-    organizations = Organization.all
-    report = Harvest::Report.new(organizations,from,to) 
-    report.persist_detailed_report(report.get_detailed_report)
-  end
 
+  def self.persist_detailed_report(report)
+
+  end
 end
