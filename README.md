@@ -2,7 +2,7 @@
 
 Rails app able to integrate information between harvestapp accounts.
 
-Sample app https://guarded-mountain-49893.herokuapp.com/
+Sample app https://harvestapp-dashboard.herokuapp.com/
 
 Features:
 
